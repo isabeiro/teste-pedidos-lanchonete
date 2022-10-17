@@ -29,6 +29,10 @@ body .container .form {
     padding: 50px;
 }
 
+body .container .hidden {
+    display: none;
+}
+
 body .container .client {
     height: 350px;
 }
