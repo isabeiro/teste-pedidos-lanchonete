@@ -1,6 +1,5 @@
 
 const express = require('express')
-const path = require('path')
 const cors = require('cors')
 
 const db = require('./src/database/db')
@@ -28,18 +27,10 @@ app.use(cors({
     }
 }))
 
-app.use(express.static(path.join(__dirname, 'public')))
-
 app.use(express.json())
 
 app.use('/api', routes)
 
-//ROTAS
-app.get('/', (req, res) => {
-    res.render('/views/index.html')
-})
-  
 // servidor
-
 const port = process.env.PORT || 8080
 app.listen(port, () => console.log(`Server is listening on port ${port}`))
