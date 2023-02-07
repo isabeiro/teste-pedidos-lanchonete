@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../public/css/style.css">
+
+</head>
+
+<body>
+    <div class="container" id="container">
+
+        <form class="admin" id="admin">
+            <h2>Acesso</h2>
+
+            <div>
+                <label>Login</label>
+                <input type="text" id="login">
+            </div>
+            <div>
+                <label>Senha</label>
+                <input type="password" id="password">
+            </div>
+
+            <button href="/views/panel" type="submit" class="button">Entrar</button>
+
+        </form>
+
+        <div class="navbar hidden" id="navbar">
+            <div class="panel" id="panel">
+                <button id="clientAdd">Cadastro de Clientes</button>
+                <button id="clientList">Lista de Clientes</button>
+                <button id="productAdd">Cadastro de Produtos</button>
+                <button id="productList">Lista de Produtos</button>
+                <button id="orderList">Lista de Pedidos</button>
+
+            </div>
+        </div>
+      
+        <div class="clientEach hidden" id="clientEach"></div>
+
+        <form class="form client hidden" id="formCadastro">
+            <h2>Novo Cliente</h2>
+    
+            <div>
+                <label>Nome</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label>E-mail</label>
+                <input type="text" id="email">
+            </div>
+            <div>
+                <label>Telefone</label>
+                <input type="text" id="phone">
+            </div>
+            <div>
+                <label>Endereço</label>
+                <input type="text" id="adress">
+            </div>
+                <button type="submit" class="button" id="submitClient" href="/pedido">Cadastrar</button>
+        </form>
+
+        <div class="form menu hidden" id="menu">
+            <h2>Cardápio</h2>
+
+            <ul class="productsList" id="productsList">
+                
+            </ul>
+        </div>
+
+    </div>
+
+    
+    <script src="../public/js/main.js"></script>
+</body>
+</html>

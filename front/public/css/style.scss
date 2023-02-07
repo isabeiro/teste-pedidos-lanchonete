@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: url('../img/img-background.jpg') no-repeat left top;
+        background-size: cover;
+        position: relative;
+        
+        .clientEach {
+            color: rgb(197, 195, 195);
+            padding-bottom: 50px;
+            font-size: 27px;
+        }
+    
+        
+        .admin,
+        .form {
+            display: flex;
+            flex-direction: column;
+            color: rgb(243 236 236);
+            font-size: 20px;
+            border: 1px solid white;
+            border-radius: 10px;
+            width: 400px;
+            padding: 50px;
+
+            h2 {
+                align-self: center;
+                padding-bottom: 20px;
+            }
+
+            div {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 18px;
+            }
+
+            label {
+                padding-right: 10px;
+            }
+
+            input {
+                position: relative;
+                height: 25px;
+                padding: 4px;
+                border-radius: 2px;
+                border: 0;
+            }
+
+            button {
+                padding: 8px 40px;
+                align-self: center;
+            }
+        }
+
+        .client {
+            height: 350px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #ba4c2e;
+            width: 300px;
+            align-self: flex-start;
+            height: 100%;
+            position: absolute;
+            
+            .panel {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                button {
+                    padding: 5px;
+                    margin: 10px 0;
+                    width: 150px;
+                    background-color: white;
+                    border-radius: 5px;
+                    border: 1px solid white;
+                }
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    }
+}
