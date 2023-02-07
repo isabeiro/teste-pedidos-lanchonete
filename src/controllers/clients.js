@@ -2,18 +2,13 @@ const ClientsModel = require('../models/clients')
 
 async function get(req, res) {
     const { id } = req.params
-
-    const obj = id ? { _id: id } : null
-
+    const obj = id ? { _id:id } : null
     const clients = await ClientsModel.find(obj)
 
-    res.send({
-        message: 'get success',
-        clients,
-    })
+    res.send(clients)
 }
 
- async function post(req, res) {
+async function post(req, res) {
     const {
         name,
         email,
@@ -21,19 +16,17 @@ async function get(req, res) {
         adress,
     } = req.body
 
-    console.log(req.body)
-
-    const client = new ClientsModel({
+    const clients = new ClientsModel({
         name,
         email,
         phone,
         adress,
     })
 
-    client.save()
+    clients.save()
 
     res.send({
-        message: 'success'
+        message: 'post success'
     })
 }  
 
@@ -43,8 +36,8 @@ async function put(req, res) {
     const client = await ClientsModel.findOneAndUpdate({ _id: id }, req.body, { new: true })
 
     res.send({
-        message: 'success',
-        client,
+        message: 'send success',
+        client
     })
 }
 

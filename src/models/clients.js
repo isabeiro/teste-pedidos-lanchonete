@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 const schema = new mongoose.Schema({
     name: String,
     email: String,
-    phone: Number,
+    phone: String,
     adress: String,
 })
 
-const Model = mongoose.model('clients', schema)
+const model = mongoose.model('clients', schema)
 
-module.exports = Model
+module.exports = model
