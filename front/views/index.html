@@ -13,7 +13,7 @@
 <body>
     <div class="container" id="container">
 
-        <form class="admin" id="admin">
+        <form class="admin hidden" id="admin">
             <h2>Acesso</h2>
 
             <div>
@@ -29,7 +29,8 @@
 
         </form>
 
-        <div class="navbar hidden" id="navbar">
+        <!--hidden-->
+        <div class="navbar " id="navbar">
             <div class="panel" id="panel">
                 <button id="clientAdd">Cadastro de Clientes</button>
                 <button id="clientList">Lista de Clientes</button>
@@ -61,15 +62,32 @@
                 <label>Endereço</label>
                 <input type="text" id="adress">
             </div>
-                <button type="submit" class="button" id="submitClient" href="/pedido">Cadastrar</button>
+            <button type="submit" class="button" id="submitClient" href="/pedido">Cadastrar</button>
         </form>
 
-        <div class="form menu hidden" id="menu">
-            <h2>Cardápio</h2>
+        <div class="form hidden" id="containerClientsList">
+            <h2>Lista de Clientes</h2>
+            <ul class="clientsList" id="clientsList"></ul>
+        </div>
 
-            <ul class="productsList" id="productsList">
-                
-            </ul>
+
+        <form class="form menu hidden" id="formCadastroProduct">
+            <h2>Novo Produto</h2>
+    
+            <div>
+                <label>Nome</label>
+                <input type="text" id="productName">
+            </div>
+            <div>
+                <label>Preço</label>
+                <input type="text" id="preco">
+            </div>
+            <button type="submit" class="button" id="submitProduct" href="/pedido">Cadastrar</button>
+        </form>
+
+        <div class="form hidden" id="containerProductsList">
+            <h2>Lista de Produtos</h2>
+            <ul class="productsList" id="productsList"></ul>
         </div>
 
     </div>
