@@ -2,15 +2,10 @@ const ProductsModel = require('../models/products')
 
 async function get(req, res) {
     const { id } = req.params
-
     const obj = id ? { _id: id } : null
-
     const products = await ProductsModel.find(obj)
 
-    res.send({
-        message: 'get success',
-        products,
-    })
+    res.send(products)
 }
 
 async function post(req, res) {
@@ -19,17 +14,15 @@ async function post(req, res) {
         price,
     } = req.body
 
-    console.log(req.body)
-
-    const product = new ProductsModel({
+    const products = new ProductsModel({
         item,
         price,
     })
 
-    product.save()
+    products.save()
 
     res.send({
-        message: 'success'
+        message: 'post success'
     })
 }  
 
@@ -39,8 +32,8 @@ async function put(req, res) {
     const product = await ProductsModel.findOneAndUpdate({ _id: id }, req.body, { new: true })
 
     res.send({
-        message: 'success',
-        product,
+        message: 'send success',
+        product
     })
 }
 

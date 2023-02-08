@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
     item: String,
-    price: Number,
+    price: String,
 })
 
-const Model = mongoose.model('products', schema)
+const model = mongoose.model('products', schema)
 
-module.exports = Model
+module.exports = model
