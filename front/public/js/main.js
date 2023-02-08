@@ -3,15 +3,13 @@ const admin = document.querySelector('#admin')
 const navbar = document.querySelector('#navbar')
 
 const formCadastro = document.querySelector('#formCadastro')
-const panel = document.querySelector('#panel')
-const menu = document.querySelector('#menu')
-const formCadastroProduct = document.querySelector('#formCadastroProduct')
-const productsList = document.querySelector('#productsList')
 const clientsList = document.querySelector('#clientsList')
 const containerClientsList = document.querySelector('#containerClientsList')
-
-adress
-
+const formCadastroProduct = document.querySelector('#formCadastroProduct')
+const productsList = document.querySelector('#productsList')
+const containerProductsList = document.querySelector('#containerProductsList')
+const ordersList = document.querySelector('#ordersList')
+const containerOrders = document.querySelector('#containerOrders')
 
 //  ADMIN
 
@@ -39,15 +37,21 @@ const buttonProductList = document.querySelector('#productList')
 const buttonOrderList = document.querySelector('#orderList')  
 
 buttonClientAdd.onclick = function() {
-    admin.classList.add('hidden')
-    containerClientsList.classList.add('hidden')
-    formCadastro.classList.remove('hidden')
+    formCadastro.classList.remove('hidden');
+    admin.classList.add('hidden');
+    containerClientsList.classList.add('hidden');
+    formCadastroProduct.classList.add('hidden');
+    containerProductsList.classList.add('hidden');
+    containerOrders.classList.add('hidden');
 }
 
 buttonProductAdd.onclick = function() {
-    admin.classList.add('hidden')
-    containerClientsList.classList.add('hidden')
-    formCadastroProduct.classList.remove('hidden')
+    formCadastro.classList.add('hidden');
+    admin.classList.add('hidden');
+    containerClientsList.classList.add('hidden');
+    formCadastroProduct.classList.remove('hidden');
+    containerProductsList.classList.add('hidden');
+    containerOrders.classList.add('hidden');
 }
 
 // NEW CLIENT 
@@ -129,8 +133,13 @@ function getClientsList() {
             `).join('')
 
             clientsList.innerHTML = clientHtml
-            containerClientsList.classList.remove('hidden')
-            formCadastro.classList.add('hidden')
+            
+            formCadastro.classList.add('hidden');
+            admin.classList.add('hidden');
+            containerClientsList.classList.remove('hidden');
+            formCadastroProduct.classList.add('hidden');
+            containerProductsList.classList.add('hidden');
+            containerOrders.classList.add('hidden');
 
             adicionaEventoBotaoExcluirClient()
         })
@@ -213,10 +222,42 @@ function getProductsList() {
             `).join('')
 
             productsList.innerHTML = productHtml
-            containerProductsList.classList.remove('hidden')
-            formCadastroProduct.classList.add('hidden')
+            formCadastro.classList.add('hidden');
+            admin.classList.add('hidden');
+            containerClientsList.classList.add('hidden');
+            formCadastroProduct.classList.add('hidden');
+            containerProductsList.classList.remove('hidden');
+            containerOrders.classList.add('hidden');
 
             adicionaEventoBotaoExcluirProduct()
+        })
+    })
+}
+
+// ORDERS LIST
+
+buttonOrderList.onclick = function() {
+    getOrdersList()
+}
+
+function getOrdersList() {
+    fetch('http://127.0.0.1:8080/api/orders', {
+        method: 'GET',
+    }).then(response => {
+        response.json().then(data => {
+            const orderHtml = data.map(order => `
+                <li>
+                    ${order.codigoCliente} - ${order.codigoProduto} - ${order.dataCriacao}    
+                </li>
+            `).join('')
+
+            ordersList.innerHTML = orderHtml
+            formCadastro.classList.add('hidden');
+            admin.classList.add('hidden');
+            containerClientsList.classList.add('hidden');
+            formCadastroProduct.classList.add('hidden');
+            containerProductsList.classList.add('hidden');
+            containerOrders.classList.remove('hidden');
         })
     })
 }
