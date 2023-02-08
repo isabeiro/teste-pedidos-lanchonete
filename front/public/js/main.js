@@ -121,7 +121,7 @@ function getClientsList() {
         response.json().then(data => {
             const clientHtml = data.map(client => `
                 <li>
-                    ${client.name} - ${client.email} - ${client.phone} - ${client.adress}
+                    ${client.name} <br> ${client.email} <br> ${client.phone} <br> ${client.adress} <br>
                     <a
                         href="#" 
                         class="botao-excluir" 
@@ -210,7 +210,7 @@ function getProductsList() {
         response.json().then(data => {
             const productHtml = data.map(product => `
                 <li>
-                    ${product.item} - ${product.price} 
+                    ${product.item} <br> ${product.price} 
                     <a
                         href="#" 
                         class="botao-excluir" 
@@ -247,7 +247,17 @@ function getOrdersList() {
         response.json().then(data => {
             const orderHtml = data.map(order => `
                 <li>
-                    ${order.codigoCliente} - ${order.codigoProduto} - ${order.dataCriacao}    
+                    <p>Cliente ${order.codigoCliente}</p>
+                    <p>Ordem${order.codigoProduto}</p>
+                    <p>Data ${order.dataCriacao}</p>
+                    <label for="cars">Status do Pedido:</label>
+                    <select id="status">
+                        <option value="pendente">Pendente</option>
+                        <option value="emPreparo">Em preparo</option>
+                        <option value="emEntrega">Em entrega</option>
+                        <option value="entregue">Entregue</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
                 </li>
             `).join('')
 

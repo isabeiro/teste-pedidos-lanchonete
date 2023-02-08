@@ -25,17 +25,28 @@ body {
         .admin,
         .form {
             display: flex;
+            justify-content: center;
             flex-direction: column;
-            color: rgb(243 236 236);
             font-size: 20px;
-            border: 1px solid white;
+            border: 3px solid white;
             border-radius: 10px;
             width: 400px;
-            padding: 50px;
+            padding: 30px 50px;
+            background-color: #d1d1d1;
 
             h2 {
                 align-self: center;
                 padding-bottom: 20px;
+            }
+
+            ul {
+                li {
+                    list-style-type: circle;
+                    padding: 6px 0;
+                    a {
+                        color: red;
+                    }
+                }
             }
 
             div {
@@ -67,22 +78,23 @@ body {
         }
 
         .navbar {
+            border-right: 3px solid white;
             display: flex;
             justify-content: center;
-            background-color: #ba4c2e;
+            background-color: #d1d1d1;
             width: 300px;
             align-self: flex-start;
             height: 100%;
             position: absolute;
             
             .panel {
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+                
                 button {
-                    padding: 5px;
+                    padding: 8px 5px;
                     margin: 10px 0;
                     width: 150px;
                     background-color: white;
