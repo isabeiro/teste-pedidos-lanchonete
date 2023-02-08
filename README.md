@@ -1,9 +1,10 @@
 
 # SIMULAÇÃO DE TESTE PARA VAGA DE EMPREGO
+
 <p>Por esse desafio, o desenvolvedor deverá mostrar ser capaz de desenvolver uma API RESTFul, para criar pedidos de uma lanchonete, e um painel administrativo para cadastrar os produtos e gerenciar os pedidos.</p>
-<br><br>
+
 ## Sobre o problema
-<br>
+
 <p>O Sistema deverá contemplar os módulos: Cliente, Produto e Pedido. Um Pedido pertence a um Cliente e um Pedido contém vários Produtos.</p>
 <br>
 <p>A API será utilizada para o client que irá realizar os pedidos. Nesse sentido, ela deverá conter endpoints para que um Cliente possa se cadastrar. Além de criar, listar, ver e excluir Pedidos de um Cliente específico. Obs.: Para evitar autenticação, o id do Cliente pode ser usado como parâmetro para realizar essas ações.</p>
@@ -18,8 +19,9 @@
   <li>Pedido: código do cliente, código do produto, data de criação e status do pedido;</li>
   <li>O Pedido poderá conter os status: Pendente, Em preparo, Em entrega, Entregue e Cancelado;</li>
 </ul>
-<br><br>
+
 ### Como executar o projeto
+
 <ul>
   <li>Instale o Postman</li>
   <li>Instale o MongoDB</li>
@@ -30,7 +32,7 @@
 </ul>
 
 #### Conclusões
-<br>
+
 <p>Foi um projeto muito desafiador e divertido de ser executado. Demorei mais do que o previsto para a conclusão e precisei rever alguns conceitos conforme ia avançando.</p>
 <p>Fiquei muito satisfeita com o resultado, apesar de não ter dado muita atenção ao css, consegui fazer com que as requests e formulários funcionam, atingindo assim o objetivo pedido.</p>
  
